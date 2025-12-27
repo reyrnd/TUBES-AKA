@@ -54,9 +54,9 @@ def cek_resi_rekursif(jalur, h, posisi, tujuan, idx=0, jalur_dilalui=None):
     if posisi not in jalur or len(jalur[posisi]) == 0:
         return None
 
-    next_node = jalur[posisi][0]
-    if h[next_node] < h[posisi]:
-        return cek_resi_rekursif(jalur, h, next_node, tujuan, 0, jalur_dilalui + [next_node])
+    titik_next = jalur[posisi][0]
+    if h[titik_next] < h[posisi]:
+        return cek_resi_rekursif(jalur, h, titik_next, tujuan, 0, jalur_dilalui + [titik_next])
 
     return None
 
