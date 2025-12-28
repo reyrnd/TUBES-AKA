@@ -44,7 +44,7 @@ def cek_resi_iteratif(jalur, h, posisi_awal, tujuan):
         if h[titik_next] < h[posisi_sekarang]:
             posisi_sekarang = titik_next
 
-def cek_resi_rekursif(jalur, h, posisi, tujuan, idx=0, jalur_dilalui=None):
+def cek_resi_rekursif(jalur, h, posisi, tujuan, jalur_dilalui=None):
     if jalur_dilalui is None:
         jalur_dilalui = [posisi]
 
@@ -55,8 +55,9 @@ def cek_resi_rekursif(jalur, h, posisi, tujuan, idx=0, jalur_dilalui=None):
         return None
 
     titik_next = jalur[posisi][0]
+
     if h[titik_next] < h[posisi]:
-        return cek_resi_rekursif(jalur, h, titik_next, tujuan, 0, jalur_dilalui + [titik_next])
+        return cek_resi_rekursif(jalur, h, titik_next, tujuan, jalur_dilalui + [titik_next])
 
     return None
 
